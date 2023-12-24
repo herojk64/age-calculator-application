@@ -1,0 +1,215 @@
+:root{
+    /*Primary*/
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    /*Neutral*/
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+
+    /*Body Copy*/
+
+    --Font-size32: 32px; /* (inputs)*/
+
+    /*Font*/
+
+    --Family: Poppins; /*(https://fonts.google.com/specimen/Poppins)*/
+    --Weights400: 400;
+    --Weights700:700;
+    --Weights800: 800;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: var(--Family) , serif;
+    min-height:100svh;
+}
+
+body,html,div,span,h1,h2,h3,h4,h5,a,b,ul,li{
+    margin:0;
+    padding:0;
+}
+
+.App{
+    background-color:var(--Off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    width: 100%;
+}
+
+.main__wrapper{
+    padding:2rem;
+    background-color:var(--White);
+    border-radius: 10% 10% 30% 10%;
+    margin:0 1em;
+    aspect-ratio: 2/1;
+}
+
+@media screen and (max-width: 500px) {
+    .main__wrapper{
+        padding: 1rem;
+    }
+}
+
+.age__form{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:1rem;
+    padding:1em;
+}
+
+@media screen and (max-width: 500px) {
+    .age__form{
+        padding: 1rem;
+        gap:0.5rem;
+    }
+}
+
+.age__form div label{
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    color:var(--Smokey-grey);
+    margin-bottom: 5px;
+}
+
+.age__form div input{
+    padding:0.4em 0.8em;
+    border-radius: 5px;
+    outline: none;
+    border:1px solid var(--Smokey-grey);
+    font-weight: var(--Weights700);
+    font-size: var(--Font-size32);
+}
+
+.age__form div .input__error{
+    border:1px solid var(--Light-red);
+}
+
+@media screen and (max-width: 500px) {
+
+    .age__form{
+        gap:0;
+    }
+
+    .age__form div input{
+        padding: 10px 0 10px 10px;
+        width: min-content;
+        font-size: 18px;
+    }
+    .age__form div:nth-child(2){
+        margin:0 auto;
+    }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.form__button_wrapper{
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    margin-top:10px;
+}
+
+.form__button_wrapper::before{
+    content:" ";
+    display: block;
+    height:2px;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    background-color:var(--Light-grey);
+}
+
+.form__button_wrapper button{
+    border-radius: 50%;
+    border:0;
+    background-color:var(--Purple);
+    padding:1em;
+    transition: 1s ease;
+}
+
+.form__button_wrapper button:active{
+    -webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.form__button_wrapper button:hover{
+    background: var(--Off-black);
+}
+
+@-webkit-keyframes scale-down-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+}
+@keyframes scale-down-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .form__button_wrapper::after{
+        content:" ";
+        display: block;
+        height:2px;
+        border-radius: 5px 0 0 5px;
+        width: 100%;
+        background-color:var(--Light-grey);
+    }
+
+    .form__button_wrapper button{
+        margin:0 auto;
+    }
+
+    .form__button_wrapper button img{
+        aspect-ratio: 1/1;
+        height: 30px;
+    }
+}
+
+.display__result{
+    padding: 1em;
+}
+
+.display__result div{
+    font-size: 56px;
+    font-weight: var(--Weights800);
+}
+
+@media screen and (max-width: 500px) {
+
+    .display__result{
+            padding: 1rem;
+    }
+
+    .display__result div{
+        font-size: 42px;
+    }
+
+}
