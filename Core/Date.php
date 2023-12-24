@@ -52,13 +52,21 @@ class Date
         return true;
     }
 
-    public function getAge(){
-        if(!$this->validate()){
+    public function getAge()
+    {
+        if (!$this->validate()) {
             return [];
         }
-        $year = date("Y")-$this->year;
-        $month = $this->month>date("m")?date("m")-$this->month:date("m");
-        $day = date('d');
-        return compact("day","month","year");
+
+        $currentDate = new \DateTime();
+        $inputDate = new \DateTime("{$this->year}-{$this->month}-{$this->day}");
+
+        $age = $currentDate->diff($inputDate);
+
+        return [
+            'years' => $age->y,
+            'months' => $age->m,
+            'days' => $age->d,
+        ];
     }
 }

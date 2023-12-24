@@ -41,9 +41,9 @@ views("partials/head.view.php");
             </div>
         </form>
         <section class="display__result">
-            <div class="text-secondary"><span class="text-primary"><?=$age['year']??"--"?></span> Years</div>
-            <div class="text-secondary"><span class="text-primary"><?=$age['month']??"--"?></span> months</div>
-            <div class="text-secondary"><span class="text-primary"><?=$age['day']??"--"?></span> days</div>
+            <div class="text-secondary"><span class="text-primary"><?=$age['years']??"--"?></span> Years</div>
+            <div class="text-secondary"><span class="text-primary"><?=$age['months']??"--"?></span> months</div>
+            <div class="text-secondary"><span class="text-primary"><?=$age['days']??"--"?></span> days</div>
         </section>
     </main>
 </div>
